@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_checkin">
+
+    <fragment
+        android:id="@+id/navigation_checkin"
+        android:name="com.example.trintanarios.CheckinsFragment"
+        android:label="Check-ins"
+        tools:layout="@layout/fragment_checkins" />
+
+    <fragment
+        android:id="@+id/navigation_checkout"
+        android:name="com.example.trintanarios.CheckoutsFragment"
+        android:label="Check-outs"
+        tools:layout="@layout/fragment_checkouts" />
+</navigation>

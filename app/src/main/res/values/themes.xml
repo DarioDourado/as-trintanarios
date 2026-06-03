@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Trintanarios" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Trintanarios" parent="Base.Theme.Trintanarios" />
+
+    <!-- Tema Premium para a Splash Screen -->
+    <style name="Theme.Trintanarios.Splash" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/bg_splash_gradient</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

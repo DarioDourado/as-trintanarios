@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splash_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_gradient"
+    tools:context=".SplashActivity">
+
+    <!-- Central container for Logo, Title and Slogan -->
+    <LinearLayout
+        android:id="@+id/center_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.45">
+
+        <!-- Logo with subtle shadow glow effect via background/padding if desired -->
+        <ImageView
+            android:id="@+id/splash_logo"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:contentDescription="App Logo"
+            android:src="@drawable/ic_splash_logo"
+            android:padding="8dp" />
+
+        <!-- Vertical space -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="24dp" />
+
+        <!-- App Name -->
+        <TextView
+            android:id="@+id/splash_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Trintanários"
+            android:textColor="@color/text_white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.05"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Vertical space -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="8dp" />
+
+        <!-- App Slogan -->
+        <TextView
+            android:id="@+id/splash_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inovação &amp; Conexão"
+            android:textColor="@color/text_muted"
+            android:textSize="14sp"
+            android:letterSpacing="0.1"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif" />
+
+    </LinearLayout>
+
+    <!-- Bottom Footer (Powered by/Development branding) -->
+    <LinearLayout
+        android:id="@+id/footer_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginBottom="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ProgressBar
+            android:id="@+id/splash_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="120dp"
+            android:layout_height="4dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/splash_accent_glow"
+            android:progressBackgroundTint="@color/text_muted"
+            android:layout_marginBottom="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DESENVOLVIDO COM EXCELÊNCIA"
+            android:textColor="@color/text_muted"
+            android:textSize="10sp"
+            android:letterSpacing="0.2"
+            android:textAllCaps="true"
+            android:fontFamily="sans-serif-condensed" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
