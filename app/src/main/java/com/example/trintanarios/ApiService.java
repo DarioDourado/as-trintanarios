@@ -5,33 +5,34 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
+import retrofit2.http.PATCH;
+import retrofit2.http.Path;
 
 public interface ApiService {
 
     // --- CHECK-IN ---
-    @GET("checkin/pending")
+    @GET("checkins/pending")
     Call<List<GuestRecord>> getPendingCheckins();
 
-    @GET("checkin/processed")
+    @GET("checkins/processed")
     Call<List<GuestRecord>> getProcessedCheckins();
 
-    @POST("checkin/updateObservations")
-    Call<Void> updateCheckinObservations(@Body ObservationPayload payload);
+    @PATCH("checkins/{id}/observations")
+    Call<Void> updateCheckinObservations(@Path("id") String id, @Body ObservationPayload payload);
 
-    @POST("checkin/processCheckInById")
-    Call<Void> processCheckInById(@Body IdPayload payload);
+    @PATCH("checkins/{id}/process")
+    Call<Void> processCheckin(@Path("id") String id);
 
     // --- CHECK-OUT ---
-    @GET("checkout/pending")
-    Call<List<GuestRecord>> getPendingCheckouts();
+    @GET("checkouts/today")
+    Call<List<GuestRecord>> getTodayCheckouts();
 
-    @GET("checkout/processed")
+    @GET("checkouts/processed")
     Call<List<GuestRecord>> getProcessedCheckouts();
 
-    @POST("checkout/updateObservations")
-    Call<Void> updateCheckoutObservations(@Body ObservationPayload payload);
+    @PATCH("checkouts/{id}/observations")
+    Call<Void> updateCheckoutObservations(@Path("id") String id, @Body ObservationPayload payload);
 
-    @POST("checkout/processCheckoutById")
-    Call<Void> processCheckoutById(@Body IdPayload payload);
+    @PATCH("checkouts/{id}/process")
+    Call<Void> processCheckout(@Path("id") String id);
 }

@@ -1,17 +1,12 @@
 package com.example.trintanarios;
 
 public class ObservationPayload {
-    private String id;
-    private String observacoes;
+    private String obs;
 
-    public ObservationPayload(String id, String observacoes) {
-        this.id = id;
-        this.observacoes = observacoes;
+    public ObservationPayload(String obs) {
+        this.obs = obs;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getObservacoes() { return observacoes; }
-    public void setObservacoes(String observacoes) { this.observacoes = observacoes; }
+    public String getObs() { return obs; }
+    public void setObs(String obs) { this.obs = obs; }
 }

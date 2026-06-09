@@ -16,35 +16,29 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <!-- Header: Nome, Saudação, Quarto -->
-        <TextView
-            android:id="@+id/tv_greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="Sr."
-            android:textStyle="bold"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
+        <!-- Header: Nome and Quarto -->
         <TextView
             android:id="@+id/tv_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            tools:text="João Silva"
+            tools:text="Sr. João Silva"
             android:textStyle="bold"
-            android:textSize="16sp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tv_greeting"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_room" />
 
         <TextView
             android:id="@+id/tv_room"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tools:text="Q. 104"
+            tools:text="Quarto 104"
             android:textStyle="bold"
             android:textColor="@color/splash_accent"
+            android:background="@drawable/bg_room_tag"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -98,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@id/tv_people"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Observations -->
+        <!-- Observations (editable - pending) -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_observations"
             android:layout_width="0dp"
@@ -130,6 +124,26 @@
             app:layout_constraintTop_toTopOf="@id/til_observations"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <!-- Observations (read-only - processed) -->
+        <TextView
+            android:id="@+id/tv_observations_display"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:visibility="gone"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tv_vip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier_observations"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="til_observations,tv_observations_display" />
+
         <!-- Action Button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_action"
@@ -137,7 +151,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             tools:text="Processar Check-in"
-            app:layout_constraintTop_toBottomOf="@id/til_observations"
+            app:layout_constraintTop_toBottomOf="@id/barrier_observations"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

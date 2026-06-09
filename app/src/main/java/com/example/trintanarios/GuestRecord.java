@@ -1,7 +1,10 @@
 package com.example.trintanarios;
 
+import com.google.gson.annotations.SerializedName;
+
 public class GuestRecord {
     private String id;
+    @SerializedName("NomeCompleto")
     private String nomeCompleto;
     private String saudacao;
     private int quarto;
@@ -10,7 +13,9 @@ public class GuestRecord {
     private int nPessoas;
     private String dataSaida;
     private String idioma;
+    @SerializedName("vitStatus")
     private String vipStatus;
+    @SerializedName("obs")
     private String observacoes;
     private boolean isProcessed;
 
