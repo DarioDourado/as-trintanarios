@@ -6,10 +6,6 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.ArrayList;
 import java.util.List;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
 public class CheckinRepository {
 
     private final ApiService apiService;
@@ -27,7 +23,7 @@ public class CheckinRepository {
         // Inicializar Mock Data
         GuestRecord g1 = new GuestRecord();
         g1.setId("1");
-        g1.setNomeCompleto("João Silva");
+        g1.setNomeCompleto("Kim Balley");
         g1.setSaudacao("Sr.");
         g1.setQuarto(104);
         g1.setHoraChegada("14:00");
